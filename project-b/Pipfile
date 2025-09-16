@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+# Install shared packages from local paths
+common-utils = {path = "../shared-packages/common-utils", editable = true}
+data-models = {path = "../shared-packages/data-models", editable = true}
+
+# External dependencies
+pandas = "*"
+click = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+black = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.9"
