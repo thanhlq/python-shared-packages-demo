@@ -75,6 +75,19 @@ cd src
 python cli.py demo
 ```
 
+### 5. Docker
+
+```bash
+docker compose up -d
+
+# Test the API
+curl http://localhost:5001/
+curl http://localhost:5001/utils/capitalize/hello%20world
+
+# Stop the container
+docker compose down
+```
+
 ## 📦 Shared Packages
 
 ### common-utils
