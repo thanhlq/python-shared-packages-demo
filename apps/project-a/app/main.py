@@ -3,6 +3,7 @@ Project A - Web API Service
 A Flask web service that demonstrates the use of shared packages.
 """
 
+from common_utils.aim import iam_get_user_roles
 from flask import Flask, jsonify, request
 from datetime import datetime
 from decimal import Decimal
@@ -91,6 +92,11 @@ def home():
         ]
     })
 
+@app.route('/roles', methods=['GET', 'POST'])
+def handle_roles():
+    """Handle role operations."""
+    if request.method == 'GET':
+        return jsonify(iam_get_user_roles())
 
 @app.route('/users', methods=['GET', 'POST'])
 def handle_users():
