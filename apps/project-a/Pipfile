@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 # Install shared packages from local paths
-common-utils = {path = "../shared-packages/common-utils", editable = true}
-data-models = {path = "../shared-packages/data-models", editable = true}
+common-utils = {path = "../../packages/common-utils", editable = true}
+data-models = {path = "../../packages/data-models", editable = true}
 
 # External dependencies
 flask = "*"

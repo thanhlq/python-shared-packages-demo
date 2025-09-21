@@ -7,6 +7,7 @@ docker compose up -d
 
 # Test the API
 curl http://localhost:5001/
+curl http://localhost:5001/users
 curl http://localhost:5001/utils/capitalize/hello%20world
 
 # Stop the container

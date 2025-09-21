@@ -1,0 +1,21 @@
+services:
+
+
+  backend:
+    build:
+      context: ../../  # Change context to root directory to include packages
+      dockerfile: apps/project-a/Dockerfile
+    ports:
+      - "${API_PORT-5001}:${API_PORT-5001}"  # Changed to 5001
+    # working_dir: code/apps/project-a/
+    # In Development uncomment this to mount the code (to reload when changed)
+    # volumes:
+    #   - .:/app/project-a/
+    #   - ../../packages:/app/packages  # Mount shared packages
+    command: sh -c "python app/main.py"
+    environment:
+      PYTHONPATH: "/app:/app/project-a:/app/packages/common-utils/src:/app/packages/data-models/src"
+
+networks:
+  external-network:
+    external: true

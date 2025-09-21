@@ -64,7 +64,7 @@ def init_sample_data():
         id=1,
         username="johndoe",
         email="john.doe@example.com",
-        first_name="John",
+        first_name="John 2",
         last_name="Doe"
     )
 

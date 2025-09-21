@@ -6,7 +6,7 @@ A demonstration workspace showing how to structure and use shared Python package
 
 ```
 my-workspace/
-├── shared-packages/
+├── packages/
 │   ├── common-utils/                 # Shared utility functions
 │   │   ├── setup.py                 # Package configuration
 │   │   └── src/common_utils/        # Source code
@@ -38,7 +38,7 @@ my-workspace/
 
 ### 1. Clone and Navigate
 ```bash
-cd python-shared-packages-demo
+cd python-packages-demo
 ```
 
 ### 2. Install Shared Packages (Development Mode)
@@ -46,12 +46,12 @@ Install the shared packages in development mode so changes are immediately avail
 
 ```bash
 # Install common-utils package
-cd shared-packages/common-utils
+cd packages/common-utils
 pip install -e .
 cd ../..
 
 # Install data-models package
-cd shared-packages/data-models
+cd packages/data-models
 pip install -e .
 cd ../..
 ```
@@ -161,7 +161,7 @@ python cli.py demo
 
 1. **Add to shared package:**
    ```bash
-   cd shared-packages/common-utils/src/common_utils
+   cd packages/common-utils/src/common_utils
    # Edit or add new utility modules
    ```
 
@@ -181,7 +181,7 @@ python cli.py demo
 
 For shared packages:
 ```bash
-cd shared-packages/common-utils
+cd packages/common-utils
 # Edit setup.py to add dependencies
 pip install -e .  # Reinstall in development mode
 ```
@@ -196,7 +196,7 @@ pipenv install new-package
 
 ### Testing Shared Packages
 ```bash
-cd shared-packages/common-utils
+cd packages/common-utils
 python -m pytest tests/
 ```
 
@@ -230,8 +230,8 @@ The workspace uses:
 Example Pipfile entry:
 ```toml
 [packages]
-common-utils = {path = "../shared-packages/common-utils", editable = true}
-data-models = {path = "../shared-packages/data-models", editable = true}
+common-utils = {path = "../packages/common-utils", editable = true}
+data-models = {path = "../packages/data-models", editable = true}
 ```
 
 ## 🎮 Try It Out
