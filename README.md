@@ -22,16 +22,19 @@ my-workspace/
 │           ├── user.py              # User models
 │           ├── product.py           # Product models
 │           └── order.py             # Order models
-├── project-a/                       # Flask Web API Service
-│   ├── Pipfile                     # Dependencies with shared packages
-│   ├── README.md                   # Project-specific documentation
-│   └── src/
-│       └── app.py                  # Flask application
-└── project-b/                      # Data Processing CLI
-    ├── Pipfile                     # Dependencies with shared packages
-    ├── README.md                   # Project-specific documentation
-    └── src/
-        └── cli.py                  # CLI application
+└── apps/
+    ├── project-a/                   # Flask Web API Service
+    │   ├── Pipfile                  # Dependencies with shared packages
+    │   ├── README.md                # Project-specific documentation
+    │   ├── docker-compose.yml       # Docker configuration
+    │   ├── Dockerfile               # Container configuration
+    │   └── app/
+    │       └── main.py              # Flask application
+    └── project-b/                   # Data Processing CLI
+        ├── Pipfile                  # Dependencies with shared packages
+        ├── README.md                # Project-specific documentation
+        └── src/
+            └── cli.py               # CLI application
 ```
 
 ## 🚀 Quick Start
@@ -58,17 +61,17 @@ cd ../..
 
 ### 3. Set Up Project A (Flask Web API)
 ```bash
-cd project-a
+cd apps/project-a
 pipenv install
 pipenv shell
-cd src
-pipenv run python app.py
+cd app
+pipenv run python main.py
 ```
 Access the API at http://localhost:5001
 
 ### 4. Set Up Project B (CLI Tool)
 ```bash
-cd project-b
+cd apps/project-b
 pipenv install
 pipenv shell
 cd src
@@ -78,6 +81,7 @@ python cli.py demo
 ### 5. Docker
 
 ```bash
+cd apps/project-a
 docker compose up -d
 
 # Test the API
@@ -202,7 +206,7 @@ python -m pytest tests/
 
 ### Testing Projects
 ```bash
-cd project-a
+cd apps/project-a
 pipenv shell
 python -m pytest
 
@@ -230,20 +234,20 @@ The workspace uses:
 Example Pipfile entry:
 ```toml
 [packages]
-common-utils = {path = "../packages/common-utils", editable = true}
-data-models = {path = "../packages/data-models", editable = true}
+common-utils = {path = "../../packages/common-utils", editable = true}
+data-models = {path = "../../packages/data-models", editable = true}
 ```
 
 ## 🎮 Try It Out
 
 1. **Start the API service:**
    ```bash
-   cd project-a && pipenv shell && cd src && python app.py
+   cd apps/project-a && pipenv shell && cd app && python main.py
    ```
 
 2. **In another terminal, try the CLI tool:**
    ```bash
-   cd project-b && pipenv shell && cd src && python cli.py demo
+   cd apps/project-b && pipenv shell && cd src && python cli.py demo
    ```
 
 3. **Test API endpoints:**
@@ -254,7 +258,7 @@ data-models = {path = "../packages/data-models", editable = true}
 
 4. **Process some data:**
    ```bash
-   cd project-b/src
+   cd apps/project-b/src
    python cli.py generate-sample-data
    python cli.py process-users -i sample_users.csv
    ```
