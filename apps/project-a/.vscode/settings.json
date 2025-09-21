@@ -1,0 +1,9 @@
+{
+    "python.defaultInterpreterPath": "/Users/thanhle/.local/share/virtualenvs/project-a-avD25CtG/bin/python",
+    "python.analysis.extraPaths": [
+        "../../packages/common-utils/src",
+        "../../packages/data-models/src"
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true
+}
