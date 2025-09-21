@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "name": "packages",
+            "path": "./packages"
+        },
+        {
+            "name": "project-a",
+            "path": "./apps/project-a"
+        },
+        {
+            "name": "project-b",
+            "path": "./apps/project-b"
+        }
+    ],
+    "settings": {
+        "python.analysis.autoSearchPaths": true,
+        "python.analysis.autoImportCompletions": true
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "folders": [
+        {
+            "name": "project-a",
+            "path": "."
+        },
+        {
+            "name": "common-utils",
+            "path": "../../packages/common-utils"
+        },
+        {
+            "name": "data-models",
+            "path": "../../packages/data-models"
+        }
+    ],
+    "settings": {
+        "python.defaultInterpreterPath": "/Users/thanhle/.local/share/virtualenvs/project-a-avD25CtG/bin/python",
+        "python.analysis.extraPaths": [
+            "../../packages/common-utils/src",
+            "../../packages/data-models/src"
+        ]
+    }
+}
